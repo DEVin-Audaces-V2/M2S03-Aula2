@@ -9,13 +9,16 @@ namespace Classes
         public string Endereco {get; set;}
         public string Telefone {get; set;}
 
+        public Boletim Boletim { get; set; }
+
         public void RealizarMatricula(){
             //Faça a Matricula
             Matricula= new Random().Next();
             Console.WriteLine($"Matricula de {Nome} realizada {Matricula}");
         }
         public void ConsultarNotas(){
-            Console.WriteLine($"As Notas {Nome} de são:");
+            Console.WriteLine(Boletim.ObterDescritivoNotas());
+            Console.WriteLine("Com média: "+ Boletim.Media());
         }
     }
 }
